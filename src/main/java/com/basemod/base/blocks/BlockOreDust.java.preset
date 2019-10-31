@@ -1,0 +1,49 @@
+package com.basemod.base.blocks;
+
+import com.basemod.base.Base;
+import com.basemod.base.init.ModBlocks;
+import com.basemod.base.init.ModItems;
+import com.basemod.base.util.Resource;
+import com.basemod.base.util.IHasModel;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+
+import java.util.Random;
+
+public class BlockOreDust extends Block implements IHasModel {
+
+    /** Creating the Base of a new Mod Block */
+    public BlockOreDust(String name, Material material) {
+        super(material);
+        setTranslationKey (name);
+        setSoundType(SoundType.STONE);
+        setRegistryName(Helper.MOD_ID, name);
+        setCreativeTab(Main.MOD_TAB);
+        setHardness(3.0f);
+        setResistance(15.0f);
+        setHarvestLevel("pickaxe", 2);
+    }
+
+    /** Method to set what the Block will drop */
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return ModItems.INGOT_COPPER; // item
+    }
+
+    @Override
+    public int quantityDropped(Random rand) {
+        int max = 5;
+        int min = 1;
+        return rand.nextInt(max) + min;
+    }
+
+    /** Registering the Model of the Mod Blocks*/
+    @Override
+    public void registerModels() {
+        Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+    }
+}

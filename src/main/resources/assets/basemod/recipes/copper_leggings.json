@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "A A"
+  ],
+  "key": {
+    "A": {
+      "type": "forge:ore_dict",
+      "ore": "ingotCopper",
+      "item": "basemod:ingot_copper"
+    }
+  },
+  "result": {
+    "item": "basemod:copper_leggings",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+package com.basemod.base.items.tools;
+
+import com.basemod.base.Base;
+import com.basemod.base.init.ModItems;
+import com.basemod.base.util.IHasModel;
+import com.basemod.base.util.Resource;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemAxe;
+
+public class ToolAxe extends ItemAxe implements IHasModel {
+
+    /** Creating the Base of a new Mod Tool */
+    public ToolAxe(String name, ToolMaterial material) {
+        super(material, 6.0f, -3.2f);
+        setTranslationKey (name);
+        setRegistryName(Reference.MOD_ID, name);
+        setCreativeTab(CreativeTabs.TOOLS);
+
+        ModItems.ITEMS.add(this);
+    }
+
+    /** Registering the Model of the Mod Items*/
+    @Override
+    public void registerModels() {
+        Main.proxy.registerItemRenderer(this, 0, "inventory");
+    }
+}

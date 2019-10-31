@@ -1,0 +1,26 @@
+itemGroup.basemod.tabModTab=CW base
+
+item.ingot_copper.name=Copper Ingot
+item.ingot_tin.name=Tin Ingot
+
+item.copper_sword.name=Copper Sword
+item.copper_pickaxe.name=Copper Pickaxe
+item.copper_axe.name=Copper Axe
+item.copper_shovel.name=Copper Shovel
+item.copper_hoe.name=Copper Hoe
+item.copper_helmet.name=Copper Helmet
+item.copper_chestplate.name=Copper Chestplate
+item.copper_leggings.name=Copper Leggings
+item.copper_boots.name=Copper Boots
+
+item.tin_sword.name=Tin Sword
+item.tin_pickaxe.name=Tin Pickaxe
+item.tin_axe.name=Tin Axe
+item.tin_shovel.name=Tin Shovel
+item.tin_hoe.name=Tin Hoe
+
+tile.ore_copper.name=Copper Ore
+tile.ore_tin.name=Tin Ore
+
+tile.block_copper.name=Block of Copper
+tile.block_tin.name=Block of Tin

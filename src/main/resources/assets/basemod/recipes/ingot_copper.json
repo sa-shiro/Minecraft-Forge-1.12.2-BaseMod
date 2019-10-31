@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [{
+      "type": "forge:ore_dict",
+      "ore": "blockCopper",
+      "item": "basemod:block_copper"
+    }],
+  "result": {
+    "item": "basemod:ingot_copper",
+    "count": 9
+  }
+}
