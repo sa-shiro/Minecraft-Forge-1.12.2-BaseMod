@@ -5,7 +5,7 @@
   "description": "base Mod needed for all basemod Mods!",
   "version": "1.0.0",
   "mcversion": "1.12.2",
-  "url": "",
+  "url": "https://github.com/sa-shiro/Minecraft-Forge-1.12.2-BaseMod",
   "updateUrl": "",
   "authorList": ["Sashiro"],
   "credits": "Sashiro",

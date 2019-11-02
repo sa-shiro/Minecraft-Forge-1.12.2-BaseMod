@@ -1,6 +1,7 @@
 package com.basemod.base.world;
 
 import com.basemod.base.init.ModBlocks;
+import com.basemod.base.util.ModConfigManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
@@ -31,12 +32,17 @@ public class WorldGen implements IWorldGenerator {
     /**
      * function to declare what ores will be generated
      */
+    // We replace the Values minY, maxY, size (VALUE ONLY!), spawnTries with our config variables
     private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        generateOre(ModBlocks.ORE_COPPER.getDefaultState(),
-                world, random, chunkX * 16, chunkZ * 16, 16, 70, random.nextInt(9) + 4, 18, BlockMatcher.forBlock(Blocks.STONE));
-
-        generateOre(ModBlocks.ORE_TIN.getDefaultState(),
-                world, random, chunkX * 16, chunkZ * 16, 32, 70, random.nextInt(10) + 5, 17, BlockMatcher.forBlock(Blocks.STONE));
+        // We are using an if(statement is true) { function } else { nothing } function to check if our ore is enabled in our config!
+        if (ModConfigManager.oreCopper) {
+            generateOre(ModBlocks.ORE_COPPER.getDefaultState(),
+                    world, random, chunkX * 16, chunkZ * 16, ModConfigManager.copperMinHeight, ModConfigManager.copperMaxHeight, random.nextInt(ModConfigManager.copperVeinSize) + 1, ModConfigManager.copperSpawnTries, BlockMatcher.forBlock(Blocks.STONE));
+        } else { }
+        if (ModConfigManager.oreTin) {
+            generateOre(ModBlocks.ORE_TIN.getDefaultState(),
+                    world, random, chunkX * 16, chunkZ * 16, ModConfigManager.tinMinHeight, ModConfigManager.tinMaxHeight, random.nextInt(ModConfigManager.tinVeinSize) + 1, ModConfigManager.tinSpawnTries, BlockMatcher.forBlock(Blocks.STONE));
+        }  else { }
     }
 
     // BlockMatcher block can be removed since it doesn't have any effect!

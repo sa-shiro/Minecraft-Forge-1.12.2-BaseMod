@@ -9,6 +9,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModTab extends CreativeTabs {
 
     /**
+     * Create new Creative Tabs here!
+     */
+
+    /**
      * creating the Name of a new Creative Tab
      */
     public ModTab(String name) {

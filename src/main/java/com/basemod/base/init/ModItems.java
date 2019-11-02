@@ -18,9 +18,9 @@ import java.util.List;
 public class ModItems {
 
     /**
-     * Storing all Mod Items in an Array List
-     */
-    public static final List<Item> ITEMS = new ArrayList<Item>();
+ * Storing all Mod Items in an Array List
+ */
+public static final List<Item> ITEMS = new ArrayList<Item>();
     /**
      * function  to create new Items
      */
