@@ -23,10 +23,19 @@ public class WorldGen implements IWorldGenerator {
      */
     // Overworld id = 0, Nether id = -1, The End id = 1
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider ) {
         if (world.provider.getDimension() == 0) {
             generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
         }
+        if (world.provider.getDimension() == -1) {
+            generateNether(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+        }
+    }
+    // change or remove those values!
+    private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+        generateOre(Blocks.REDSTONE_ORE.getDefaultState(),
+                world, random, chunkX * 16, chunkZ * 16, 1, 255, random.nextInt(30) + 10, 24,BlockMatcher.forBlock(Blocks.NETHERRACK));
+
     }
 
     /**
@@ -45,8 +54,6 @@ public class WorldGen implements IWorldGenerator {
         }  else { }
     }
 
-    // BlockMatcher block can be removed since it doesn't have any effect!
-
     /**
      * function to declare the generation of the ores (min/max height, cluster size, spawn tries
      */
@@ -58,7 +65,7 @@ public class WorldGen implements IWorldGenerator {
         for (int i = 0; i < spawnTries; i++) {
             BlockPos pos = new BlockPos(chunkX + rand.nextInt(16), minY + rand.nextInt(deltaY), chunkZ + rand.nextInt(16));
 
-            WorldGenMinable generator = new WorldGenMinable(ore, size);
+            WorldGenMinable generator = new WorldGenMinable(ore, size, block);
             generator.generate(world, rand, pos);
         }
     }

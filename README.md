@@ -69,3 +69,10 @@ private void generateEnd(Random random, int chunkX, int chunkZ, World world, ICh
     // Ores to generate here
 }
 ```
+To choose in which Blocks you want your ores to generate in, change the BlockMatcher.forBlock(BLOCK_TYPE) (in the example changed to Minecraft:Netherrack)
+```java
+private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+    generateOre(Blocks.REDSTONE_ORE.getDefaultState(),
+        world, random, chunkX * 16, chunkZ * 16, 1, 255, random.nextInt(30) + 10, 24,BlockMatcher.forBlock(Blocks.NETHERRACK));
+}
+```
