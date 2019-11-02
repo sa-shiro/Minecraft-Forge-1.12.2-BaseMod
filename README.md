@@ -31,6 +31,19 @@ public static final Block ORE_TIN = new BlockBase("ore_tin", Material.IRON);
 ```
   If you want different Item / Block attributes (harvestLevel, resistance ...) create a new Base for this item inside the /items/ package (you can just copy the *Base.java and modify its attributes to match your needs)
   
+  Note that you need to create the Textures for your new Items / Blocks and their .json
+  
+  .json files for blocks: 
+  ```
+/resources/assets/basemod/blockstates/block_name.json
+/resources/assets/basemod/models/block/block_name.json
+/resources/assets/basemod/models/item/block_name.json
+```
+.json files for Items:
+```
+/resources/assets/basemod/models/item/item_name.json
+```
+To name your Items / Blocks etc you need to edit the /resource/assets/basemod/lang/en_us.lang file.
   ## World Generation
   To add / modify the World Generation, just modify the /world/WorldGen.java class
   
