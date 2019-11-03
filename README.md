@@ -11,7 +11,7 @@
   
   To rename your mod, right click the Project Root (Minecraft-Forge-1.12.2-BaseMod) and click "Replace in Path" and search for com.basemod.base and replace it with the name of your mod! (you may want to follow name conventions)
   then do the same step again, but just with "basemod" <- your mod ID, again change it to the mod ID your mod should have. 
-  After you've done it, you also need to change the directory names
+  After you've done it, you also need to change the directory names. - You can do that directly inside of IntelliJ, just right click the folder /src/main/java/com.basemod.base and use "Refractor -> Rename..."
   ```
 change those directory to what you set in the previous step! (com.basemod.base -> com/basemod/base)
 /src/main/java/com/basemod
