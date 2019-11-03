@@ -6,6 +6,20 @@
   The base Mod is well commented, so really easy to understand and it even features some ready made Copper and Tin Items as well as an own Creative Tab entry!
   
   
+  ## Renaming your Mod 
+  ####(Intellij may also work the same way for eclipse, but not tested)
+  To rename your mod, right click the Project Root (Minecraft-Forge-1.12.2-BaseMod) and click "Replace in Path" and search for com.basemod.base and replace it with the name of your mod! (you may want to follow name conventions)
+  then do the same step again, but just with "basemod" <- your mod ID, again change it to the mod ID your mod should have. 
+  After you've done it, you also need to change the directory names
+  ```
+change those directory to what you set in the previous step! (com.basemod.base -> com/basemod/base)
+/src/main/java/com/basemod
+/src/main/java/com/basemod/base
+change this directory to the mod ID you've set!
+/resource/assets/testmod
+```
+Finally you may want to change some values inside "mcmod.info", "Resources.java" and build.gradle
+  
   ## Creating new Items / Blocks
   To create new Items and Blocks you just need to edit /init/ModItems.java or /init/ModBlocks.java
   

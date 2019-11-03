@@ -38,7 +38,11 @@ public class BlockOreDust extends Block implements IHasModel {
     public int quantityDropped(Random rand) {
         int max = 5;
         int min = 1;
-        return rand.nextInt(max) + min;
+        int delta = max - min + 1;
+        if (min < 0) min = 1;
+        if (max > 64) max = 64;
+
+        return rand.nextInt(delta) + min;
     }
 
     /** Registering the Model of the Mod Blocks*/

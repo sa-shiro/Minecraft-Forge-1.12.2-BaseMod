@@ -59,7 +59,7 @@ public class WorldGen implements IWorldGenerator {
      */
     private void generateOre(IBlockState ore, World world, Random rand, int chunkX, int chunkZ, int minY, int maxY, int size, int spawnTries, BlockMatcher block) {
         int deltaY = maxY - minY + 1;
-        if (minY < 0) minY = 0;
+        if (minY < 0) minY = 1;
         if (maxY > 255) maxY = 255;
 
         for (int i = 0; i < spawnTries; i++) {
