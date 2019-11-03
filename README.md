@@ -8,6 +8,7 @@
   
   ## Renaming your Mod 
   (Intellij may also work the same way for eclipse, but not tested)
+  
   To rename your mod, right click the Project Root (Minecraft-Forge-1.12.2-BaseMod) and click "Replace in Path" and search for com.basemod.base and replace it with the name of your mod! (you may want to follow name conventions)
   then do the same step again, but just with "basemod" <- your mod ID, again change it to the mod ID your mod should have. 
   After you've done it, you also need to change the directory names
