@@ -15,6 +15,8 @@ public class BlockBase extends Block implements IHasModel {
 
     /**
      * Creating the Base of a new Mod Block
+     * @param name              The Name for the Block
+     * @param material          The Material for the Block
      */
     public BlockBase(String name, Material material) {
         super(material);

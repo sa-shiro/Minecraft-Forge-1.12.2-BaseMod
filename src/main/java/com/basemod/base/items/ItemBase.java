@@ -10,6 +10,7 @@ public class ItemBase extends Item implements IHasModel {
 
     /**
      * Creating the Base of a new Mod Item
+     * @param name                 Name for the Item
      */
     public ItemBase(String name) {
         /* Setting the Name of the Block / Item */
